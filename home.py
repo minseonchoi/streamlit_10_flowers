@@ -7,10 +7,10 @@ def run_home() :
              ##### 15년 경력의 플로리스트가 운영하는 꽃집입니다.''')
 
     st.write(' ')
-
-    st.link_button('꽃 사진 데이터 출처', url='https://www.kaggle.com/datasets/l3llff/flowers')
-    st.write("""데이터는 캐글에 있는 
-             15가지의 꽃 사진 데이터를 사용해서 꽃 사진 예측 모델을 만들었습니다.""")
+    st.write("""데이터는 캐글에 있는 15가지의 꽃 사진 데이터 
+             ( [https://www.kaggle.com/datasets/l3llff/flowers](https://www.kaggle.com/datasets/l3llff/flowers) ) 를 
+             사용해서 꽃 사진 예측 모델을 만들었습니다.""")
+    st.link_button('Kaggle 꽃 사진 데이터', url='https://www.kaggle.com/datasets/l3llff/flowers')
 
 
 
