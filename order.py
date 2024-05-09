@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import os
 import datetime
 from PIL import Image
 
@@ -114,7 +116,10 @@ def run_order() :
         '사이즈':[size_flo],
         '예정가격(원)':[final_price]
     }
-    df = st.dataframe(data)
+     # 고객 주문서 데이터 프레임으로 만들기
+    st.dataframe(pd.DataFrame(data))
+    df = pd.DataFrame(data)
+
     check = ['예', '아니오']
     per_check= st.radio('주문 정보가 맞으신가요?', check)
     if per_check[0] == check[0]:
@@ -122,11 +127,16 @@ def run_order() :
         st.caption('- 영업시간 중 주문 정보 작성 시, 당일 영업시간 이내에 연락드립니다.')
         st.caption('- 영업시간 외 주문 정보 작성 시, 다음날 영업시간에 연락드립니다.')
         st.caption('- 이 부분 참고하시어 주문 부탁드립니다. ')
-        # 저장하기 버튼
+        # 주문 정보 저장하기 버튼
         if st.button('주문정보 저장하기') :
-            df.to_csv(f'./customer_data/{tel_num}.csv')
+           filename = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+           file_path = os.path.join('./', 'customer_data', filename + '.csv')
+           df.to_csv(file_path)
+           st.success('주문 정보가 저장 되었습니다. 빠른 시간 내에 확인 연락드리겠습니다. 감사합니다 :)')
     else :
         # 처음 홈페이지로 돌아가는 버튼 만들기
-        st.write('처음 부터 다시 입력하시고 싶으시면 버튼을 눌러주세요.')
-        st.link_button('첫 시작 페이지로 돌아갑니다.', url='http://43.203.208.63:8501/')
-            
+        st.write('''
+                 > 입력 값을 수정하고 싶으신가요? \n
+                 > 처음 부터 다시 입력하시고 싶으시면 버튼을 눌러주세요.
+                 ''')
+        st.link_button('첫 시작 페이지로 돌아갑니다. 새로운 창으로 이동', url='http://43.203.208.63:8503/')
