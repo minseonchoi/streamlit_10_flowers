@@ -111,11 +111,20 @@ def run_ml() :
                 오늘 하루 주는 사람과 받는 사람 모두 
                 행복과 사랑이 가득하길 바랍니다 :)'''
 
+    st.error('''
+             ##### AWS 프리티어로는 탠서프로우 설치가 어렵습니다. 
+             ##### 그래서 로컬에서 실행한 화면으로 대체합니다.''')
+    
+    video_file = open('./image/ML.mkv', 'rb')
+    st.video(video_file)
+
 
     if file is not None :
 
         st.image(file)
-
+        
+        '''
+        머신 러닝 부분 주석 처리
         np.set_printoptions(suppress=True)
 
         # Load the model
@@ -192,7 +201,8 @@ def run_ml() :
         elif data_pred == 9 :
             st.image(img9, use_column_width=True)
             st.write(writ9)
-
+        '''
+    
     st.write('')
     st.write('')
     st.write('')
