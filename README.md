@@ -7,7 +7,7 @@
 
 #### 15가지 종류의 꽃 사진 데이터를 바탕으로 학습하여 꽃의 종류를 예측하는 인공지능을 경험할 수 있는 웹 페이지 입니다.
 
-[꽃 사진 예측 앱 URL : http://ec2-54-180-99-198.ap-northeast-2.compute.amazonaws.com:8502/](http://ec2-54-180-99-198.ap-northeast-2.compute.amazonaws.com:8502/)
+[꽃 사진 예측 앱 URL : http://ec2-43-203-246-183.ap-northeast-2.compute.amazonaws.com:8502/](http://ec2-43-203-246-183.ap-northeast-2.compute.amazonaws.com:8502/)
 
 
 ✏️ 작업순서
